@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Payment Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+  <div class="admin-login-container">
+    <div class="admin-login-card">
+      <div class="admin-login-header">
+        <h1><i class="fas fa-lock"></i> Admin Login</h1>
+        <p>Payment Portal Management System</p>
+      </div>
+      
+      <div id="loginForm">
+        <div class="form-group">
+          <label for="adminEmail">Email</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="adminEmail" value="akonsiam45@gmail.com" readonly>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="adminPassword">Password</label>
+          <div class="input-icon">
+            <i class="fas fa-key"></i>
+            <input type="password" id="adminPassword" placeholder="Enter your password" required>
+            <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
+          </div>
+        </div>
+        
+        <button onclick="adminLogin()" class="btn-primary">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+        
+        <div class="admin-login-footer">
+          <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+        </div>
+      </div>
+      
+      <div id="forgotPasswordForm" style="display: none;">
+        <h2><i class="fas fa-key"></i> Reset Password</h2>
+        <p>We'll send a verification code to your registered email</p>
+        
+        <div class="form-group">
+          <label for="resetEmail">Email</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="resetEmail" value="akonsiam45@gmail.com" readonly>
+          </div>
+        </div>
+        
+        <button onclick="sendResetCode()" class="btn-primary">
+          <i class="fas fa-paper-plane"></i> Send Verification Code
+        </button>
+        
+        <div class="admin-login-footer">
+          <a href="#" onclick="showLogin()">Back to Login</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="admin-login-footer-note">
+      <p>© 2023 Payment Portal Admin | Secure Access Only</p>
+    </div>
+  </div>
+
+  <script src="admin-script.js"></script>
+</body>
+</html>
